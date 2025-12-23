@@ -1,0 +1,72 @@
+type Query {
+  product(handle: String!): Product
+  products(first: Int!, query: String): ProductConnection!
+  collection(handle: String!): Collection
+  collections(first: Int!): CollectionConnection!
+}
+
+type Product {
+  id: ID!
+  title: String!
+  handle: String!
+  description: String
+  variants(first: Int!): ProductVariantConnection!
+}
+
+type ProductVariant {
+  id: ID!
+  title: String!
+  price: MoneyV2!
+  availableForSale: Boolean!
+}
+
+type ProductConnection {
+  edges: [ProductEdge!]!
+  pageInfo: PageInfo!
+}
+
+type ProductEdge {
+  node: Product!
+}
+
+type ProductVariantConnection {
+  edges: [ProductVariantEdge!]!
+}
+
+type ProductVariantEdge {
+  node: ProductVariant!
+}
+
+type Collection {
+  id: ID!
+  title: String!
+  handle: String!
+  products(first: Int!): ProductConnection!
+}
+
+type CollectionConnection {
+  edges: [CollectionEdge!]!
+}
+
+type CollectionEdge {
+  node: Collection!
+}
+
+type MoneyV2 {
+  amount: String!
+  currencyCode: CurrencyCode!
+}
+
+enum CurrencyCode {
+  USD
+  EUR
+  GBP
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
