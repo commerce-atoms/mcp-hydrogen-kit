@@ -7,6 +7,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
 
+> ⚠️ **Warning: Alpha / Not Fully Tested**  
+> This project is in early development and has not been fully tested in production environments.  
+> Use at your own risk and report issues if you encounter problems.
+
 A read-only MCP server that helps AI agents and developers work safely in Shopify Hydrogen codebases. Focuses on **developer ergonomics and architecture correctness**, not shopping assistants.
 
 ---
